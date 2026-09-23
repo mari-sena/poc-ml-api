@@ -10,6 +10,8 @@
     "module": "nodenext",
     "target": "esnext",
     "types": [],
+    "rewriteRelativeImportExtensions": true,
+    "erasableSyntaxOnly": true,
     // For nodejs:
     // "lib": ["esnext"],
     // "types": ["node"],
@@ -35,8 +37,8 @@
     // Recommended Options
     "strict": true,
     "jsx": "react-jsx",
-    "verbatimModuleSyntax": true,
     "isolatedModules": true,
+    "noEmit": true,
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
     "skipLibCheck": true,
