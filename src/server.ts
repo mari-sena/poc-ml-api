@@ -19,16 +19,22 @@ app.get("/health", (req, res) => {
 app.post("/transactions", (req, res) => {
   const bodyInfo = req.body;
 
-  let amount = bodyInfo.amount;
-  let description = bodyInfo.description;
+  try {
+    let amount = bodyInfo.amount;
+    let description = bodyInfo.description;
 
-  console.log("Amount: ", amount);
-  console.log("Description: ", description);
+    console.log("Amount: ", amount);
+    console.log("Description: ", description);
 
-  res.status(201).json({
-    message: "Transaction created"
-  })
-})
+    res.status(201).json({
+      message: "Transaction created"
+    });
+  } catch (e) {
+    res.status(400).json({
+      message: "Bad Request"
+    });
+  }
+});
 
 app.listen(3000, () => {
     console.log("Server running on port 3000");
